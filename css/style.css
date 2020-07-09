@@ -1,0 +1,252 @@
+*,
+*::before,
+*::after {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+:root {
+   /* Colors */
+   --color-light: #ecf0f1;
+   --color-dark: #2d3436;
+   --color-accent: #74b9ff;
+
+   /* Font weight */
+   --fw-light: 300;
+   --fw-regular: 400;
+   --fw-bold: 700;
+
+   /* Font size */
+   --fs-h1: 2.5rem;
+   --fs-h2: 2rem;
+   --fs-h3: 1.25rem;
+   --fs-body: 1rem;
+}
+
+@media (min-width: 800px) {
+   :root {
+      /* Font size */
+      --fs-h1: 3rem;
+      --fs-h2: 2.5rem;
+      --fs-h3: 1.75rem;
+      --fs-body: 1.25rem;
+   }
+}
+
+/* General Styles */
+
+html {
+   scroll-behavior: smooth;
+}
+
+body {
+   font-family: "Open sans", sans-serif;
+   font-weight: var(--fw-regular);
+   font-size: var(--fs-body);
+   background-color: var(--color-light);
+   color: var(--color-dark);
+   line-height: 1.5;
+   text-align: center;
+}
+
+h1 {
+   font-size: var(--fs-h1);
+}
+h2 {
+   font-size: var(--fs-h2);
+   padding: 1rem;
+}
+h3 {
+   font-size: var(--fs-h3);
+}
+
+p {
+   padding: 1rem;
+}
+
+a {
+   text-decoration: none;
+}
+
+img {
+   display: block;
+   margin: 0 auto;
+   max-width: 100%;
+}
+
+h2::after {
+   content: "";
+   display: block;
+   margin: 1rem auto;
+   height: 3px;
+   width: 25%;
+   background-color: #74b9ff;
+}
+
+.container {
+   margin: 0 auto;
+}
+
+/* Nav section */
+.header {
+   /* height: 3.5rem; */
+   padding: 0.5rem 1rem;
+   font-weight: var(--fw-bold);
+   font-size: calc(var(--fs-h3) + 0.25rem);
+   color: var(--color-light);
+   background-color: var(--color-dark);
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.header .logo {
+   color: var(--color-light);
+}
+
+.header .fa-bars {
+   border: 1px solid transparent;
+   border-radius: 0.25rem;
+   padding: 0.5rem;
+   cursor: pointer;
+}
+
+.header .fa-bars:hover {
+   border: 1px solid var(--color-light);
+}
+
+/* Showcase */
+.showcase-content {
+   position: relative;
+   padding: 1rem 1.5rem 2rem;
+}
+.showcase-content .showcase-title strong {
+   display: block;
+}
+.showcase-content .showcase-subtitle {
+   background-color: var(--color-accent);
+   padding: 0.25rem;
+   text-transform: uppercase;
+   font-weight: var(--fw-light);
+   letter-spacing: 1.2px;
+   margin: 1rem;
+}
+
+/* Cards (What I do) */
+.offer-section {
+   padding: 1rem 1.5rem 2rem;
+   background-color: var(--color-dark);
+   background-image: url(../img/fate-bg.jpg);
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-blend-mode: overlay;
+   color: var(--color-light);
+}
+.offer-section .offer-cards {
+   list-style-type: none;
+   display: flex;
+   flex-direction: column;
+}
+
+/* About me */
+.about {
+   padding: 1rem 1.5rem 2rem;
+}
+.about-inner-content {
+   display: flex;
+   flex-direction: column;
+}
+.about-inner-content .about-name {
+   order: 2;
+   margin-top: 1rem;
+}
+.about-inner-content .about-description {
+   order: 3;
+}
+.about-inner-content .about-img {
+   order: 1;
+}
+
+/* My works/portfolio */
+.work {
+   padding: 1rem 1.5rem 2rem;
+   background-color: var(--color-dark);
+}
+.work-content .work-title,
+.work-content .work-subtitle {
+   color: var(--color-light);
+}
+.work-items-container {
+   display: grid;
+}
+.work-items-container .work-items {
+   background-color: var(--color-accent);
+   overflow: hidden;
+}
+.work-items-container .work-items:hover img {
+   background-blend-mode: multiply;
+   transform: scale(1.5);
+   transition: transform 800ms ease-in-out;
+}
+.work-items-container .work-items img {
+   width: 100%;
+}
+
+/* Footer */
+.footer {
+   padding: 1.5rem;
+   display: flex;
+   flex-direction: column;
+   align-content: center;
+}
+.footer .footer-link:hover {
+   text-decoration: underline;
+}
+.footer a {
+   color: var(--color-dark);
+   font-size: var(--fs-h3);
+   margin-bottom: 0.75rem;
+}
+.footer .footer-links {
+   list-style-type: none;
+   display: flex;
+   justify-content: center;
+}
+.footer .footer-links a {
+   margin: 0.75rem;
+}
+/*	Extra small devices (phones, 600px and down)	*/
+@media only screen and (max-width: 600px) {
+   .container {
+      max-width: 576px;
+   }
+}
+
+/*	Small devices (portrait tablets and large phones, 600px and up)	*/
+@media only screen and (min-width: 600px) {
+   .container {
+      max-width: 576px;
+   }
+}
+
+/*	Medium devices (landscape tablets, 768px and up)	*/
+@media only screen and (min-width: 768px) {
+   .container {
+      max-width: 720px;
+   }
+}
+
+/*	Large devices (laptops/desktops, 992px and up)	*/
+@media only screen and (min-width: 992px) {
+   .container {
+      max-width: 960px;
+   }
+}
+
+/*	Extra large devices (large laptops and desktops, 1200px and up)	*/
+@media only screen and (min-width: 1200px) {
+   .container {
+      max-width: 1140px;
+   }
+}
